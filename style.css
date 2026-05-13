@@ -1,0 +1,348 @@
+/* Color Palette & Variables */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-card: #151515;
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --accent-pink: #E8437F;
+    --accent-rosegold: #DCAE96;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(10, 10, 10, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(220, 174, 150, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo image and text */
+    font-size: 24px;
+    color: var(--accent-rosegold);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    height: 50px; /* Adjust this value to make your logo bigger/smaller */
+    width: auto;
+    border-radius: 5px; /* Optional: gives the logo slightly rounded corners */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-pink);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: radial-gradient(circle at left, #2a0b18 0%, var(--bg-dark) 60%);
+    padding: 100px 10% 0 10%; /* Added top padding to account for navbar */
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left; /* Changed to left-aligned for a modern split look */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--accent-rosegold);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* New Hero Image Styling */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid var(--accent-rosegold);
+    box-shadow: 0 15px 40px rgba(232, 67, 127, 0.2); /* Pink glowing shadow */
+    transition: transform 0.5s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.02); /* Slight zoom effect when hovering over the image */
+}
+
+/* Sections Global */
+section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--accent-rosegold);
+    margin-bottom: 50px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--bg-card);
+    padding: 50px 10%;
+    border-top: 1px solid rgba(232, 67, 127, 0.2);
+    border-bottom: 1px solid rgba(232, 67, 127, 0.2);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 3rem;
+    color: var(--accent-pink);
+}
+
+/* Cards Layout */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-rosegold);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-pink);
+}
+
+.highlight-card {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+}
+
+/* Footer */
+.footer {
+    background-color: #050505;
+    padding: 60px 10% 20px 10%;
+    text-align: center;
+    border-top: 2px solid var(--accent-pink);
+}
+
+.footer h2 {
+    color: var(--accent-rosegold);
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    margin: 30px 0;
+    font-size: 1.1rem;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    color: var(--text-main);
+}
+
+.delivery-note {
+    color: var(--accent-pink);
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+.contact-info p {
+    margin: 10px 0;
+    color: var(--text-main);
+}
+
+/* NEW: Styling for the clickable contact links */
+.contact-info a {
+    color: var(--text-main); /* Keeps the text white */
+    text-decoration: none; /* Removes the underline */
+    transition: color 0.3s ease; /* Smooth fade effect */
+}
+
+.contact-info a:hover {
+    color: var(--accent-pink); /* Turns the link pink when hovered */
+    text-decoration: underline; /* Adds underline on hover for clarity */
+}
+/* =========================================
+   Mobile Hamburger Menu Styling
+   ========================================= */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--accent-rosegold);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+/* =========================================
+   Responsive Design (Tablets & Mobile)
+   ========================================= */
+
+/* Tablet Screens (Max 900px) */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 140px; /* Accounts for fixed navbar */
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    /* Reduce huge padding on smaller screens */
+    section {
+        padding: 70px 5%; 
+    }
+}
+
+/* Mobile Screens (Max 768px) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 5%;
+    }
+
+    /* Mobile Navigation Activation */
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        top: 75px; /* Drops down just below the navbar */
+        background-color: rgba(10, 10, 10, 0.98);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateY(-150%); /* Hides the menu off-screen by default */
+        transition: transform 0.4s ease-in-out;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(232, 67, 127, 0.3);
+        z-index: 999;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* This class is added by JavaScript to show the menu */
+    .nav-links.nav-active {
+        transform: translateY(0%);
+    }
+    
+    /* Optional: Hide the "Crafted Customs" text on very small phones so it doesn't crowd the logo */
+    .logo span {
+        display: none;
+    }
+}
